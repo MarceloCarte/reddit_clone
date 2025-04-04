@@ -8,4 +8,9 @@ export default defineSchema({
   })
     .index("byExternalId", ["externalId"])
     .index("byUserName", ["username"]),
+  subreddit: defineTable({
+    name: v.string(),
+    description: v.optional(v.string()),
+    authorId: v.id('users')
+  })
 });
